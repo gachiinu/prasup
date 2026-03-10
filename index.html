@@ -1,0 +1,158 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Popup Ad</title>
+
+<style>
+
+body{
+margin:0;
+height:2000px;
+font-family:sans-serif;
+}
+
+/* 背景 */
+#ad-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+/* 背景クリック用 */
+#bg-click{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+/* GIF中央 */
+#ad-box{
+position:relative;
+z-index:2;
+}
+
+/* GIF */
+#ad-gif{
+width:320px;
+max-width:80vw;
+}
+
+/* 超小さいバツ */
+#close-ad{
+position:absolute;
+top:-2px;
+right:-2px;
+font-size:5px;
+background:white;
+border-radius:50%;
+width:6px;
+height:6px;
+line-height:6px;
+text-align:center;
+cursor:pointer;
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>サイトのコンテンツ</h1>
+<p>ここにサイトの内容を書きます。</p>
+
+<div id="ad-overlay">
+
+<div id="bg-click"></div>
+
+<div id="ad-box">
+
+<div id="close-ad">×</div>
+
+<img id="ad-gif"
+src="https://nonstoperogazou.com/wp-content/uploads/2025/01/nsegz10i21.gif">
+
+</div>
+
+</div>
+
+<script>
+
+const overlay=document.getElementById("ad-overlay");
+const gif=document.getElementById("ad-gif");
+const closebtn=document.getElementById("close-ad");
+const bg=document.getElementById("bg-click");
+
+let closed=false;
+
+/* 表示 */
+function showAd(){
+
+if(closed) return;
+
+overlay.style.display="flex";
+
+/* 3秒後バツ表示 */
+setTimeout(()=>{
+closebtn.style.display="block";
+},3000);
+
+}
+
+/* 2秒後 */
+setTimeout(showAd,2000);
+
+/* スクロール */
+window.addEventListener("scroll",showAd,{once:true});
+
+
+/* GIFクリック → 動画 */
+gif.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+location.href="https://cc3001.dmm.co.jp/pv/NCU_HhsVMbvkHq24YA4f1V62RYYRTT7fT8Vp_BeEG4nms8-aRmzBQIVwtEsJAPOjZ/1totte00057_mhb_w.mp4";
+
+});
+
+
+/* 背景クリック → 画像 → 動画 */
+bg.addEventListener("click",function(){
+
+location.href="https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/1totte00057/1totte00057pl.jpg?f=webp";
+
+setTimeout(function(){
+
+location.href="https://cc3001.dmm.co.jp/pv/NCU_HhsVMbvkHq24YA4f1V62RYYRTT7fT8Vp_BeEG4nms8-aRmzBQIVwtEsJAPOjZ/1totte00057_mhb_w.mp4";
+
+},2000);
+
+});
+
+
+/* バツ */
+closebtn.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+overlay.style.display="none";
+closed=true;
+
+});
+
+</script>
+
+</body>
+</html>
+```
