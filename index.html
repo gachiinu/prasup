@@ -88,9 +88,14 @@ src="https://nonstoperogazou.com/wp-content/uploads/2025/01/nsegz10i21.gif">
 
 <script>
 
-/* 要素取得 */
+document.addEventListener("DOMContentLoaded", function(){
+
+const overlay = document.getElementById("ad-overlay");
 const gif = document.getElementById("ad-gif");
 const bg = document.getElementById("bg-click");
+
+/* 広告表示 */
+overlay.style.display="flex";
 
 /* GIFクリック */
 gif.addEventListener("click",function(e){
@@ -107,7 +112,10 @@ location.href="image.html";
 
 });
 
+});
+
 </script>
 
 </body>
 </html>
+
