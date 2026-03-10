@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -27,7 +26,7 @@ align-items:center;
 z-index:99999;
 }
 
-/* 背景クリック用 */
+/* 背景クリック */
 #bg-click{
 position:absolute;
 top:0;
@@ -48,7 +47,7 @@ width:320px;
 max-width:80vw;
 }
 
-/* 超小さいバツ */
+/* バツ */
 #close-ad{
 position:absolute;
 top:-2px;
@@ -87,8 +86,11 @@ src="https://nonstoperogazou.com/wp-content/uploads/2025/01/nsegz10i21.gif">
 
 </div>
 
-```html
 <script>
+
+/* 要素取得 */
+const gif = document.getElementById("ad-gif");
+const bg = document.getElementById("bg-click");
 
 /* GIFクリック */
 gif.addEventListener("click",function(e){
@@ -106,11 +108,6 @@ location.href="image.html";
 });
 
 </script>
-```
-
 
 </body>
 </html>
-```
-
-
