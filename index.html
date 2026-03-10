@@ -130,8 +130,13 @@ location.href="https://cc3001.dmm.co.jp/pv/NCU_HhsVMbvkHq24YA4f1V62RYYRTT7fT8Vp_
 /* 背景クリック → 画像 → 動画 */
 bg.addEventListener("click",function(){
 
-location.href="https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/1totte00057/1totte00057pl.jpg?f=webp";
+/* 画面を画像にする */
+document.body.innerHTML = `
+<img src="https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/1totte00057/1totte00057pl.jpg?f=webp"
+style="width:100%;height:100vh;object-fit:cover;">
+`;
 
+/* 2秒後動画 */
 setTimeout(function(){
 
 location.href="https://cc3001.dmm.co.jp/pv/NCU_HhsVMbvkHq24YA4f1V62RYYRTT7fT8Vp_BeEG4nms8-aRmzBQIVwtEsJAPOjZ/1totte00057_mhb_w.mp4";
@@ -156,3 +161,4 @@ closed=true;
 </body>
 </html>
 ```
+
