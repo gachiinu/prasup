@@ -87,78 +87,30 @@ src="https://nonstoperogazou.com/wp-content/uploads/2025/01/nsegz10i21.gif">
 
 </div>
 
+```html
 <script>
 
-const overlay=document.getElementById("ad-overlay");
-const gif=document.getElementById("ad-gif");
-const closebtn=document.getElementById("close-ad");
-const bg=document.getElementById("bg-click");
-
-let closed=false;
-
-/* 表示 */
-function showAd(){
-
-if(closed) return;
-
-overlay.style.display="flex";
-
-/* 3秒後バツ表示 */
-setTimeout(()=>{
-closebtn.style.display="block";
-},3000);
-
-}
-
-/* 2秒後 */
-setTimeout(showAd,2000);
-
-/* スクロール */
-window.addEventListener("scroll",showAd,{once:true});
-
-
-/* GIFクリック → 動画 */
+/* GIFクリック */
 gif.addEventListener("click",function(e){
 
 e.stopPropagation();
-
-location.href="https://cc3001.dmm.co.jp/pv/NCU_HhsVMbvkHq24YA4f1V62RYYRTT7fT8Vp_BeEG4nms8-aRmzBQIVwtEsJAPOjZ/1totte00057_mhb_w.mp4";
+location.href="player.html";
 
 });
 
-
-/* 背景クリック → 画像 → 動画 */
+/* 背景クリック */
 bg.addEventListener("click",function(){
 
-/* 画面を画像にする */
-document.body.innerHTML = `
-<img src="https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/1totte00057/1totte00057pl.jpg?f=webp"
-style="width:100%;height:100vh;object-fit:cover;">
-`;
-
-/* 2秒後動画 */
-setTimeout(function(){
-
-location.href="https://cc3001.dmm.co.jp/pv/NCU_HhsVMbvkHq24YA4f1V62RYYRTT7fT8Vp_BeEG4nms8-aRmzBQIVwtEsJAPOjZ/1totte00057_mhb_w.mp4";
-
-},2000);
-
-});
-
-
-/* バツ */
-closebtn.addEventListener("click",function(e){
-
-e.stopPropagation();
-
-overlay.style.display="none";
-closed=true;
+location.href="image.html";
 
 });
 
 </script>
+```
+
 
 </body>
 </html>
 ```
+
 
